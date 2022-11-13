@@ -1,0 +1,16 @@
+# Latex
+
+*.aux
+*.bbl
+*.blg
+*.fls
+*.log
+*.nav
+*.out
+*.toc
+*.fdb_latexmk
+*.snm
+*.synctex.gz
+
+# VS Code
+.vscode
