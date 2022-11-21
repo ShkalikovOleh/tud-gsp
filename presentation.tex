@@ -52,39 +52,81 @@
     \tableofcontents
 \end{frame}
 
-\section{Simple metrics}
+\section{Introduction}
 
 \begin{frame}
-    \frametitle{Sample frame title}
-    This is some text in the first frame. Let's make a new paragraph
 
-    This is new paragraph. \par New line with a command \textit{par}
+    \frametitle{Scientific Productivity}
 
-    This is a bold \textbf{world}
+    Scientific productivity
+
+   \hspace{1cm}
+
+    how much output does a scientist produce within a certain time period
+
+   \hspace{1cm}
+
+   The major outputs from the research :
+
+   \hspace{1cm}
+    \begin{itemize}
+      \item  publications
+      \item patents
+      \item  product developments
+    \end{itemize}
 
 \end{frame}
 
+\begin{frame}
+
+    \frametitle{Bibliometric Incentive}
+
+    \begin{figure}[h]
+        \includegraphics[height=0.5\textheight]{1.png}
+        \caption{The current bibliometrics incentives model.}
+    \end{figure}
+
+\end{frame}
+
+\begin{frame}
+
+   \frametitle{Scientific metrics}
+   how much output a scientist produce within a certain time period
+   \hspace{1cm}
+
+   The major outputs from research :
+
+   \hspace{1cm}
+    \begin{itemize}
+      \item  publications
+      \item patents
+      \item  product developments
+    \end{itemize}
+\end{frame}
 \section{Bibliometrics}
 
 % Use section and subsection to add item to table of contents
-\subsection{CiteScore}
+\subsection{Impact factor}
 
 \begin{frame}
-    \frametitle{Sample formula}
-    Let's show some mathematical formula:
+    \frametitle{Impact factor}
+    Impact Factor formula:
+    
+    \begin{align*}
+        IF(x) &= \frac{ Citations(x)}{ Publications(x - 2 ) +  Publications(x - 1) }\\
+    \end{align*}
 
-    \[
-        \overline{X} = \frac{\sum\limits_{i=1}^n x_i}{\# \text{number of samples}}
-    \]
+    For example, Nature had an impact factor of 49.962 in 2020:
+    
+    \begin{align*}
+        IF(2020) &= \frac{ Citations(2020)}{ Publications(2018) +  Publications(2019) } &= 49.962\\
+    \end{align*}
 
-    where \(\overline{X}\) is an average of a sample \(X\),
-    $x_i$ -- $i$-th element of sample.
+    Note that 2020 impact factors are reported in 2021; they cannot be calculated until all of the 2020
+    publications have been processed by the indexing agency.
 
-    \begin{alertblock}{Sample alert block}
-        Please pay attention to how dash, text in big formula and  the inline math mode
-        has been implemented in code.
-    \end{alertblock}
 \end{frame}
+
 
 \section{Researcher's metrics}
 
