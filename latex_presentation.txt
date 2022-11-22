@@ -1,0 +1,241 @@
+\begin{frame}
+    \frametitle{h-index}
+
+    \begin{block}{What is the h-index?}
+        The \textbf{h-index} is a measure used to "quantify the cumulative impact and relevance of an individual’s scientific research output."
+    \end{block}
+
+    \begin{alertblock}{}
+        First introduced by Professor Jorge E. Hirsch in 2005.
+    \end{alertblock}
+    \textbf{h-index} formula:
+    \[
+     \color{red}   h = max(i ϵ Ν:f(i)>=i)
+    \]
+   \centering i: paper, f(i): number of citations for i
+    \begin{figure}[h]
+        \includegraphics[height=0.3\textheight]{h-index_plot2.png}
+        \caption{Graphical representation of the h-index}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{h-index}
+
+     \begin{exampleblock}{Example}
+        \centering 4 publications:   A,B,C,D \hspace{0.5cm}   citations per paper:  7,5,4,3\\
+        \centering h-index=3
+        
+    \end{exampleblock}
+    \begin{columns}[T]
+        \begin{column}{.5\textwidth} 
+            \centering \textbf{Pros}
+            \begin{propslist}
+                \item It avoids previous indexes' problems
+                \item It measures both productivity and impact
+                \item High h-index=high number of papers and citations
+            \end{propslist}
+        \end{column}
+        \begin{column}{.5\textwidth}
+            \centering \textbf{Cons} % example how to center one block
+            \begin{conslist}
+                \item Field of research is ignored
+                \item Order of authors' contribution is ignored
+                \item Insensitive to highly cited publications
+                \item Exposed to manipulation
+                \item Time-dependent
+            \end{conslist}
+        \end{column}
+    \end{columns}
+
+\end{frame}
+\begin{frame}
+    \frametitle{h-index variations}
+\begin{block}{m quotient}
+    It allows comparisons between scientists with different career lengths.
+    \end{block}\\
+    \textbf{m quotient} formula:
+    \[
+       \color{red} m = h/n
+    \]
+   \centering h: h-index, n: years of academic activity.
+
+\begin{block}{normalized h-index}
+    It reduces the discipline bias.
+    \end{block}
+    \textbf{normalized h-index} formula:
+    \[
+      \color{red} |h|=\frac{h}{d}
+    \] \centering h: h-index, d: average number of academics in the field.
+\end{frame}
+\begin{frame}
+\frametitle{h-index variations}
+\begin{block}{individual h-index or hl}
+    It reduces the effects of co-authorship.
+    \end{block}
+    \textbf{hl} formula:
+    \[ \color{red} hl = \frac{h}{\sum\limits_{i=1}^n a_i}\]
+    \centering h: h-index, n: number of papers, a_i: \text{average number of authors.}
+\end{frame}
+\begin{frame}
+\frametitle{g-index}
+\begin{block}{What is the g-index?}
+   The \textbf{g-index} is a modified version of the h-index
+    \end{block}
+    \begin{alertblock}{}
+        First introduced by Leo Egghe in 2006.
+    \end{alertblock}
+    \begin{block}{How is it calculated?}
+   Decreasingly order the papers based on the number of citations for each. The index is the largest number s.t. the top g articles received together at least g^2 citations.
+    \end{block}\\
+    \end{frame}
+     \begin{frame}
+     \frametitle{g-index}
+    \textbf{g-index} formula:
+    \[
+       \centering \color{red} g^2 = \sum\limits_{i=1}^g c_i
+    \]
+    \centering c_i: \text{number of citations for each i paper.}\\
+    \begin{figure}[g]
+        \includegraphics[height=0.3\textheight]{g-index_wiki.png}
+        \caption{Graphical representation of the g-index}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{g-index}
+    \begin{exampleblock}{Example}
+      \centering Top publications: 5\\
+       \centering Citations:        25\\
+       \centering g-index=5
+    \end{exampleblock}
+    \begin{alertblock}{}
+        g is always greater or equal to h.
+    \end{alertblock}
+    \begin{columns}[T]
+        \begin{column}{.5\textwidth} 
+            \centering \textbf{Pros}
+            \begin{propslist}
+                \item All h-index advantages
+                \item It rewards papers with many citations
+            \end{propslist}
+        \end{column}
+        \begin{column}{.5\textwidth}
+            \centering \textbf{Cons} % example how to center one block
+            \begin{conslist}
+                \item Saturation value
+                \item It lacks discriminatory power
+                \item It only favours academics with many publications
+            \end{conslist}
+        \end{column}
+    \end{columns}
+\end{frame}
+\begin{frame}
+    \frametitle{i10 index}
+    \begin{block}{What is the i10 index?}
+   The \textbf{i10} index is a very simple research impact measure, calculated as the number of papers with at least 10 citations.
+    \end{block}
+    \begin{alertblock}{}
+        Introduced and used by Google Scholar
+    \end{alertblock}
+    \textbf{i10} index formula:
+    \[
+      \color{red} i10 = \sum\limits_{i=1}^n i: f(i)>=10
+    \]
+    \centering i: paper, f(i): number of citations per paper.
+    \begin{columns}[T]
+        \begin{column}{.5\textwidth} 
+            \centering \textbf{Pros}
+            \begin{propslist}
+                \item Easy to calculate
+                \item It can be freely consulted
+            \end{propslist}
+        \end{column}
+        \begin{column}{.5\textwidth}
+            \centering \textbf{Cons} % example how to center one block
+            \begin{conslist}
+                \item Not usually referred to
+            \end{conslist}
+        \end{column}
+    \end{columns}
+\end{frame}  
+\begin{frame}
+    \frametitle{c-indexes}
+        \begin{block}{What are c-indexes?}
+   \textbf{c-indexes} are the result of the augmentation of the h-index based on the citation order.
+    \end{block}
+     \begin{alertblock}{}
+        Introduced in 2018 in the magazine Cureus.
+    \end{alertblock}
+     \textbf{c-indexes} formulas:
+    \[
+       \centering \color{red} c_p = h + i_p  \hspace{0.5cm} \color{red} c_s = h + i_s \hspace{0.5cm} \color{red} c_o = h + i_p + i_s
+    \]
+    The augmentations are given by the following formulas:
+    
+\centering \color{blue} i_p = $n_f$ + $0.5n_s$ 
+
+\centering \color{blue} i_s = $n_l$+ $0.5n_s$
+    \end{frame}
+    \begin{frame}
+    \frametitle{c-indexes}
+    \begin{columns}[T]
+        \begin{column}{.5\textwidth} 
+            \centering \textbf{Pros}
+            \begin{propslist}
+                \item All the advantages of the h-index
+                \item More accurate
+                \item Takes citation order into account
+            \end{propslist}
+        \end{column}
+        \begin{column}{.5\textwidth}
+            \centering \textbf{Cons} % example how to center one block
+            \begin{conslist}
+                \item Time-dependent
+                \item Field of research is ignored 
+            \end{conslist}
+        \end{column}
+    \end{columns}
+\end{frame}
+\begin{frame}
+    \frametitle{l-index}
+\begin{block}{What is the l-index?}
+        The \textbf{l-index} is a bibliometric measure derived from the h-index which enhances highly cited papers.
+    \end{block}
+\begin{alertblock}{}
+        Introduced in 2014.
+    \end{alertblock}
+    \textbf{l-index} formula:\\
+    \centering given x real citation distribution, x* ideal citation distribution, C_x  \text{total number of citations}:\\
+     \[
+\centering \color{red} L(x) = \sum\limits_{i=1}^n (\frac{1+x_i}{x_i*})x_i* \]
+\centering After normalization:
+\[
+\centering \color{red} l(x) = \sqrt{\frac{L(x)}{ln2}}
+    \]
+\end{frame}
+\begin{frame}
+\frametitle{l-index}
+\begin{columns}[T]
+        \begin{column}{.5\textwidth} 
+            \centering \textbf{Pros}
+            \begin{propslist}
+                \item All the advantages of the h-index
+                \item It rewards papers with many citations
+                \item Regular and robust
+            \end{propslist}
+        \end{column}
+        \begin{column}{.5\textwidth}
+            \centering \textbf{Cons} % example how to center one block
+            \begin{conslist}
+                \item Time-dependent
+                \item Order of authors' contribution is ignored
+                \item Field of research is ignored 
+                \item Complex calculation
+            \end{conslist}
+        \end{column}
+    \end{columns}
+\end{frame}
+\begin{frame}
+\frametitle{CONCLUSION}
+\end{frame}
