@@ -7,6 +7,8 @@
 \usepackage{graphicx}
 \usepackage{subcaption}
 
+\usepackage{xurl}
+
 \usepackage{drawstack}
 \usepackage{tikz}
 \usetikzlibrary{decorations.pathreplacing}
@@ -71,8 +73,13 @@
 
 \section{Bibliometrics}
 
-% Use section and subsection to add item to table of contents
 % \subsection{Impact Factor}
+
+\begin{frame}
+    \centering
+    \Large
+    Advanced Bibliometrics
+\end{frame}
 
 \subsection{CiteScore}
 
@@ -81,7 +88,7 @@
     \begin{block}{What is CiteScore?}
         \textbf{CiteScore}\cite{CiteScore2016} -- a per-year metric provided
         by \sco which measure rate between the received citations
-        to published within prior 4 years for \textbf{all peer-reviewed documents} of a title.
+        to \textbf{all peer-reviewed documents} of a title published within 4 years.
     \end{block}
 
     The CiteScore is calculated by the following formula:
@@ -93,7 +100,7 @@
     \begin{itemize}
         \item $CD_x(y)$ -- the number of citations in year range from $x$ to $y$
               to all documents published within those years.
-        \item $D(y)$ -- the number of all documents published in year $y$
+        \item $D(y)$ -- the number of all \textbf{peer-reviewed} documents published in year~$y$
     \end{itemize}
 
 \end{frame}
@@ -218,7 +225,7 @@
 
 \subsection{SNIP}
 \begin{frame}
-    \frametitle{SNIP}
+    \frametitle{SNIP (Source Normalized Impact per Paper)}
     \begin{block}{What is SNIP?}
         \textbf{SNIP}\cite{moed2010measuring} measures a journal's contextual
         citation impact, taking into account subject field with use of, so called,
@@ -289,7 +296,6 @@
                 \pros Covers more titles than IF
                 \pros More robust and stable than IF
                 \pros Allow to compare titles from different fields
-                \pros based on citations from peer-reviewed papers
             \end{itemize}
         \end{column}
         \begin{column}{.5\textwidth}
@@ -305,6 +311,120 @@
 \end{frame}
 
 \subsection{SJR}
+\begin{frame}
+    \frametitle{SJR (SCImago Journal Rank)}
+    \begin{block}{What is SJR?}
+        \textbf{SJR}\cite{gonzalez2009sjr} is a metric provided by
+        \sco which is based on the number of citations and the prestige
+        of the titles which cite this journal.
+    \end{block}
+
+    Key points of SJR:
+    \begin{itemize}
+        \item Based on PageRank\cite{page1999pagerank} algorithm to calculate
+              the prestige of the journal: citations issued by more important journals will be more valuable than those
+              issued by less important ones
+        \item Self-citation limited to 33\% of the total references
+        \item Citation time frame is 3 year
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{SJR: methodology}
+    The SJR indicator is computed in two phases:
+    \begin{enumerate}
+        \item Prestige SJR (PSJR) -- size-
+              dependent measure that reflects the overall journal prestige
+        \item  normalization of this measure
+              to give a size-independent metric
+    \end{enumerate}
+
+    The formula for the SJR metric (2 stage) is the following:
+    \[
+        \text{SJR}_i(y) = c \frac{PSJR_i(y)}{Art_i(y)}
+    \]
+    where
+    \begin{itemize}
+        \item $Art_i(y)$ -- number of primary items
+              (articles, reviews, and conference papers) of journal $i$ published
+              in three previous years [y-3, y-1].
+        \item $c$ -- common constant to prettify values of SJR
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Prestige SJR}
+    The PSJR calculation is an iterative process
+    which started with \textbf{identical
+        amount} of prestige to each journal until the differences
+    between journal prestige in consecutive
+    iterations is under threshold.
+    \scalebox{0.84}
+    {
+        $
+            PSJR_i = \overbrace{\frac{1-d-e}{N}}^{\text{min value}} +
+            \overbrace{e \cdot \frac{Art_i}{\sum\limits_{j=1}^N Art_j}}^{\text{number of papers}} +
+            \overbrace{d \left[ \sum\limits_{j=1}^N C_{ji} \cdot \frac{PSJR_i}{C_j} \cdot CF +
+                    \frac{Art_i}{\sum\limits_{j=1}^N Art_j} \cdot \sum\limits_{k \in DN} PSJR_k \right]}^{\text{number and “importance” of the citations
+                    from other journals}}
+        $
+    }
+    where
+    \alt<2>
+    {
+        \begin{itemize}
+            \item CF(Correction Factor) is introduced that spreads the undistributed prestige
+                  over all the journals proportionally to their accumulated prestige
+        \end{itemize}
+        \[
+            CF = \frac{1 - \sum\limits_{k \in DN} PSJR_k}
+            {\sum\limits_{h=1}^N \sum\limits_{l=1}^N C_{lh} \cdot \dfrac{PSJR_l}{C_l}}
+        \]
+    }
+    {
+        \begin{columns}[T]
+            \begin{column}{.5\textwidth}
+                \begin{itemize}
+                    \item $C_j$ -- number of references of journal $j$
+                    \item $C_{ji}$ -- references from journal $j$ to journal $i$
+                    \item $d$ -- constant: $0.9$
+                \end{itemize}
+            \end{column}
+            \begin{column}{.5\textwidth}
+                \begin{itemize}
+                    \item $N$ -- number of journals in the database
+                    \item $DN$ -- journals that do not cite other journals
+                    \item $e$ -- constant: $0.0999$
+                \end{itemize}
+            \end{column}
+        \end{columns}
+    }
+\end{frame}
+
+\begin{frame}
+    \frametitle{SJR: advantages and disadvantages}
+    \begin{columns}[T]
+        \begin{column}{.5\textwidth}
+            \centering \textbf{Pros}
+            \begin{itemize}[<+->]
+                \pros Transparency
+                \pros Only citation from peer-reviewed content counted
+                \pros Covers more titles than IF
+                \pros Robust and stable
+                \pros Self-citation is limited
+                \pros Allow to compare titles from different fields
+            \end{itemize}
+        \end{column}
+        \begin{column}{.5\textwidth}
+            \centering \textbf{Cons}
+            \begin{itemize}[<+->]
+                \cons Bounded to the Scopus database
+                \cons Hard to interpret and calculate
+                \cons Still windowed approach
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{frame}
 
 \section{Researcher's metrics}
 
