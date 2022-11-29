@@ -484,9 +484,10 @@
     \end{alertblock}
     \textbf{h-index} formula:
     \[
-        \color{red}   h = max(i ϵ Ν:f(i)>=i)
-    \]
-    \centering i: paper, f(i): number of citations for i
+        h = max(i ϵ Ν:f(i)>=i)
+    \] \\
+    where
+   \centering i is the published paper and f(i) is the number of citations for i
     \begin{figure}[h]
         \includegraphics[height=0.3\textheight]{h-index_plot2.png}
         \caption{Graphical representation of the h-index}
@@ -530,17 +531,17 @@
     \end{block}\\
     \textbf{m quotient} formula:
     \[
-        \color{red} m = h/n
+        m = h/n
     \]
-    \centering h: h-index, n: years of academic activity.
+   \centering h: h-index, n: years of academic activity.
 
     \begin{block}{normalized h-index}
         It reduces the discipline bias.
     \end{block}
     \textbf{normalized h-index} formula:
     \[
-        \color{red} |h|=\frac{h}{d}
-    \] \centering h: h-index, d: average number of academics in the field.
+      |h|=\frac{h}{d}
+    \] where \centering h is the h-index and d the average number of academics in the field.
 \end{frame}
 \begin{frame}
     \frametitle{h-index variations}
@@ -548,8 +549,8 @@
         It reduces the effects of co-authorship.
     \end{block}
     \textbf{hl} formula:
-    \[ \color{red} hl = \frac{h}{\sum\limits_{i=1}^n a_i}\]
-    \centering h: h-index, n: number of papers, a_i: \text{average number of authors.}
+    \[  hl = \frac{h}{\sum\limits_{i=1}^n a_i}\]
+ where   \centering h is the h-index, n the number of papers and a_i \text{average number of authors.}
 \end{frame}
 \begin{frame}
     \frametitle{g-index}
@@ -567,9 +568,9 @@
     \frametitle{g-index}
     \textbf{g-index} formula:
     \[
-        \centering \color{red} g^2 = \sum\limits_{i=1}^g c_i
+       \centering  g^2 = \sum\limits_{i=1}^g c_i
     \]
-    \centering c_i: \text{number of citations for each i paper.}\\
+  where  \centering c_i: \text{number of citations for each i paper.}\\
     \begin{figure}[g]
         \includegraphics[height=0.3\textheight]{g-index_wiki.png}
         \caption{Graphical representation of the g-index}
@@ -615,15 +616,15 @@
     \end{alertblock}
     \textbf{c-indexes} formulas:
     \[
-        \centering \color{red} c_p = h + i_p  \hspace{0.5cm} \color{red} c_s = h + i_s \hspace{0.5cm} \color{red} c_o = h + i_p + i_s
+       \centering  c_p = h + i_p  \hspace{0.5cm}  c_s = h + i_s \hspace{0.5cm}  c_o = h + i_p + i_s
     \]
     The augmentations are given by the following formulas:
 
-    \centering \color{blue} i_p = $n_f$ + $0.5n_s$
+\centering \color{blue} i_p = $n_f$ + $0.5n_s$
 
-    \centering \color{blue} i_s = $n_l$+ $0.5n_s$
-\end{frame}
-\begin{frame}
+\centering  i_s = $n_l$+ $0.5n_s$
+    \end{frame}
+    \begin{frame}
     \frametitle{c-indexes}
     \begin{columns}[T]
         \begin{column}{.5\textwidth}
@@ -653,11 +654,11 @@
     \end{alertblock}
     \textbf{l-index} formula:\\
     \centering given x real citation distribution, x* ideal citation distribution, C_x  \text{total number of citations}:\\
-    \[
-        \centering \color{red} L(x) = \sum\limits_{i=1}^n (\frac{1+x_i}{x_i*})x_i* \]
-    \centering After normalization:
-    \[
-        \centering \color{red} l(x) = \sqrt{\frac{L(x)}{ln2}}
+     \[
+\centering L(x) = \sum\limits_{i=1}^n (\frac{1+x_i}{x_i*})x_i* \]
+\centering After normalization:
+\[
+\centering  l(x) = \sqrt{\frac{L(x)}{ln2}}
     \]
 \end{frame}
 \begin{frame}
@@ -683,12 +684,12 @@
     \end{columns}
 \end{frame}
 \begin{frame}
-    \frametitle{CONCLUSION}
-    Simple metrics like number of publications, number of citations or impact factor are often inappropriate to quantify the impact of a journal or an academic.
-    \\
-    More complex metrics must be employed.
-    \\
-    Deciding which metric to use depends on its specific properties and on the academic context.
+\frametitle{CONCLUSION}
+\begin{itemize}
+\item [$\blacksquare$] Simple metrics like number of publications, number of citations or impact factor are often inappropriate to quantify the impact of a journal or an academic.
+\item [$\blacksquare$] More complex metrics must be employed.
+\item [$\blacksquare$] Deciding which metric to use depends on its specific properties and on the academic context.
+\end{itemize}
 \end{frame}
 
 \begin{frame}[allowframebreaks]
