@@ -54,7 +54,7 @@
 \author[O. Shkalikov \and M. Zannini \and Q. Qaribiyan]
 {Oleh Shkalikov \and Matteo Zannini \and Qader Qaribiyan}
 
-\institute[]{TU Dresden, Computer Science Faculty}
+\institute{TU Dresden, Computer Science Faculty}
 
 \date{December, 2022}
 
@@ -69,7 +69,151 @@
     \tableofcontents
 \end{frame}
 
-\section{Simple metrics}
+\section{Introduction}
+\begin{frame}
+    \frametitle{Problem}
+    \textbf{Assessing} the quality and impact of research outputs is necessary \\~\
+
+    \textbf{Every Metric} has its limitations\\~\
+
+    \textbf{No easy way exists} to measure scientific performance\\~\
+\end{frame}
+
+\begin{frame}
+    \frametitle{Problem}
+    \textbf{The original purpose of scientific publishing} was to enable the global sharing of scientific results, ideas, and discussions within the academic society for more effective scientific achievements.\\~\
+
+    \textbf{Influence of a publication is used for :}
+    \begin{itemize}
+        \item allocation of funding resources
+        \item industrial and economic growth priorities
+        \item education policies
+        \item the hiring of personnel academics
+    \end{itemize}
+\end{frame}
+
+\subsection{Bibliographic Databases}
+\begin{frame}
+    \begin{center}
+        {\huge Bibliographic Databases}
+    \end{center}
+    \begin{figure}[h]
+        \begin{subfigure}{0.49\textwidth}
+            \centering
+            \includegraphics[width=0.7\textwidth]{scopus.png}
+        \end{subfigure}
+        \begin{subfigure}{0.49\textwidth}
+            \centering
+            \includegraphics[width=0.7\textwidth]{gs.png}
+        \end{subfigure}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Bibliographic Databases}
+
+    \begin{block}{What is a bibliographic database?}
+        A bibliographic database is a repository of bibliographic or publication records.
+    \end{block}
+
+    They are built on the fact that citations in science serve as linkages between similar research items, and lead to related scientific literature\\~\
+
+    \textbf{Frequently used biomedical databases include}
+    \begin{itemize}
+        \item Web of Science
+        \item Scopus
+        \item Google Scholar
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Advantages and disadvantages of databases}
+    \begin{columns}[T]
+        \begin{column}{.5\textwidth}
+            \centering Pros
+            \begin{itemize}[<+->]
+                \pros Easy access to publication metadata and citation metrics
+                \pros Rigorous quality control
+            \end{itemize}
+        \end{column}
+        \begin{column}{.5\textwidth}
+            \centering Cons
+            \begin{itemize}[<+->]
+                \cons Databases may not contain the most recent references
+                \cons Most databases only include published articles
+                \cons Bias towards English
+                \cons Limited to specific fields
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\subsection{Scientific Metrics Types}
+\begin{frame}
+    \frametitle{Scientific Metrics Types}
+    \textbf{Journal-level metrics} are used to determine the impact a journal has on the scientific community
+    \begin{itemize}
+        \item Impact Factor
+    \end{itemize}
+    \textbf{Article Metrics and Altmetrics} are used to quantify the impact of published articles-how published papers are being discussed and shared.
+    \begin{itemize}
+        \item Citation Counts
+        \item Attention Score
+    \end{itemize}
+    \textbf{Author-level metrics} assess the impact an author makes on the scientific community or field of the study.
+    \begin{itemize}
+        \item H-Index
+        \item G-Index
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Bibliometric Incentive}
+
+    \begin{figure}[h]
+        \includegraphics[height=0.5\textheight]{bib_incentives.png}
+        \caption{Bibliometric incentives model\footnote{https://doi.org/10.1371/journal.pone.0195321.g001}}
+    \end{figure}
+
+\end{frame}
+
+\subsection{Altmetric Attention Score}
+\begin{frame}
+    \frametitle{Altmetric Attention Score}
+    \begin{block}{What is Altmetric Attention Score?}
+        The Altmetric Attention Score is an automatically calculated, weighted count of all of the attention a research output has received
+    \end{block}
+
+    It is calculated using data collected from research articles such as mentions
+    on social media, news outlets, blogs, patents, etc.\\~\
+
+    \begin{figure}[h]
+        \includegraphics[height=0.41\textheight]{altscore.png}
+        \caption{The colors of different sources of attention}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Advantages to using altmetrics and limitations}
+    \begin{columns}[T]
+        \begin{column}{.5\textwidth}
+            \centering Pros
+            \begin{itemize}[<+->]
+                \pros Quicker to accumulate than citation-based metrics
+                \pros Capture more diverse impacts than citation-based metrics
+                \pros Actively engage with comments and conversation around your work
+            \end{itemize}
+        \end{column}
+        \begin{column}{.5\textwidth}
+            \centering Cons
+            \begin{itemize}[<+->]
+                \cons Altmetrics don’t tell the whole story
+                \cons People can artificially inflate the altmetrics for their research
+                \cons Altmetrics are relatively new
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{frame}
 
 \section{Bibliometrics}
 
@@ -380,7 +524,7 @@
 
     The formula for the SJR metric (2 stage) is the following:
     \[
-        \text{SJR}_i(y) = c \frac{PSJR_i(y)}{Art_i(y)}
+        \text{SJR}_i(y) = c \cdot \frac{PSJR_i(y)}{Art_i(y)}
     \]
     where
     \begin{itemize}
@@ -520,7 +664,7 @@
     \begin{columns}[T]
         \begin{column}{.5\textwidth}
             \centering \textbf{Pros}
-            \begin{itemize}
+            \begin{itemize}[<+->]
                 \pros It avoids previous indexes' problems
                 \pros It measures both productivity and impact
                 \pros High h-index = high number of papers and citations
@@ -528,7 +672,7 @@
         \end{column}
         \begin{column}{.5\textwidth}
             \centering \textbf{Cons}
-            \begin{itemize}
+            \begin{itemize}[<+->]
                 \cons Field of research is ignored
                 \cons Order of authors' contribution is ignored
                 \cons Insensitive to highly cited publications
@@ -638,14 +782,14 @@
     \begin{columns}[T]
         \begin{column}{.5\textwidth}
             \centering \textbf{Pros}
-            \begin{itemize}
+            \begin{itemize}[<+->]
                 \pros All h-index advantages
                 \pros It rewards papers with many citations
             \end{itemize}
         \end{column}
         \begin{column}{.5\textwidth}
             \centering \textbf{Cons}
-            \begin{itemize}
+            \begin{itemize}[<+->]
                 \cons Saturation value
                 \cons It lacks discriminatory power
                 \cons It only favours academics with many publications
@@ -672,8 +816,8 @@
     \]
     The augmentations are given by the following formulas:
     \begin{align*}
-        i_p &= n_f + 0.5 n_s \\
-        i_s &= n_l + 0.5 n_s
+        i_p & = n_f + 0.5 n_s \\
+        i_s & = n_l + 0.5 n_s
     \end{align*}
 \end{frame}
 
@@ -682,7 +826,7 @@
     \begin{columns}[T]
         \begin{column}{.5\textwidth}
             \centering \textbf{Pros}
-            \begin{itemize}
+            \begin{itemize}[<+->]
                 \pros All the advantages of the h-index
                 \pros More accurate
                 \pros Takes citation order into account
@@ -690,7 +834,7 @@
         \end{column}
         \begin{column}{.5\textwidth}
             \centering \textbf{Cons}
-            \begin{itemize}
+            \begin{itemize}[<+->]
                 \cons Time-dependent
                 \cons Field of research is ignored
             \end{itemize}
@@ -730,7 +874,7 @@
     \begin{columns}[T]
         \begin{column}{.5\textwidth}
             \centering \textbf{Pros}
-            \begin{itemize}
+            \begin{itemize}[<+->]
                 \pros All the advantages of the h-index
                 \pros It rewards papers with many citations
                 \pros Regular and robust
@@ -738,7 +882,7 @@
         \end{column}
         \begin{column}{.5\textwidth}
             \centering \textbf{Cons}
-            \begin{itemize}
+            \begin{itemize}[<+->]
                 \cons Time-dependent
                 \cons Order of authors' contribution is ignored
                 \cons Field of research is ignored
