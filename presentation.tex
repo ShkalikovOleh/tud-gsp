@@ -73,20 +73,61 @@
 
 \section{Bibliometrics}
 
-% \subsection{Impact Factor}
-
 \begin{frame}
     \centering
-    \Large
-    Advanced Bibliometrics
+    \Huge
+    Bibliography metrics
+\end{frame}
+
+\subsection{Impact Factor}
+\begin{frame}
+    \frametitle{IF (Impact Factor)}
+    \begin{block}{What is Impact Factor?}
+        \textbf{Impact Factor}\cite{garfield1972citation} --- a per-year
+        metric based on \wos database which reflect the mean number of citation
+        to the paper published within prior 2 year.
+    \end{block}
+
+    The Impact Factor is calculated by the following formula:
+    \[
+        \text{IF}(y) = \frac{C(y)}{D(y - 1) + D(y - 2)}
+    \]
+    where
+    \begin{itemize}
+        \item $C(y)$ -- number of citation to the articles published in $[y-2, y-1]$~years
+        \item $D(y)$ -- number of published articles in year $y$
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{IF: advantages and disadvantages}
+    \begin{columns}[T]
+        \begin{column}{.5\textwidth}
+            \centering \textbf{Pros}
+            \begin{itemize}[<+->]
+                \pros Easily calculated and interpreted
+            \end{itemize}
+        \end{column}
+        \begin{column}{.5\textwidth}
+            \centering \textbf{Cons}
+            \begin{itemize}[<+->]
+                \cons Limited availability
+                \cons Lack of reproducibility
+                \cons Doesn’t adjust for the distribution of citations
+                \cons Windowed approach (especially 2 year window)
+                \cons Doesn’t distinguish between citations made to articles, reviews, or editorials
+                \cons Unstable
+                \cons Doesn't allow to compare titles from different fields
+            \end{itemize}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 \subsection{CiteScore}
-
 \begin{frame}
     \frametitle{CiteScore}
     \begin{block}{What is CiteScore?}
-        \textbf{CiteScore}\cite{CiteScore2016} -- a per-year metric provided
+        \textbf{CiteScore}\cite{CiteScore2016} --- a per-year metric provided
         by \sco which measure rate between the received citations
         to \textbf{all peer-reviewed documents} of a title published within 4 years.
     \end{block}
@@ -214,7 +255,7 @@
         \begin{column}{.5\textwidth}
             \centering \textbf{Cons}
             \begin{itemize}[<+->]
-                \cons Bounded to the Scopus database
+                \cons Bounded to the \sco database
                 \cons Doesn’t adjust for the distribution of citations
                 \cons Windowed approach
                 \cons Doesn't allow to compare titles from different fields
@@ -301,7 +342,7 @@
         \begin{column}{.5\textwidth}
             \centering \textbf{Cons}
             \begin{itemize}[<+->]
-                \cons Bounded to the Scopus database
+                \cons Bounded to the \sco database
                 \cons Hard to interpret
                 \cons Calculation is more complicated
                 \cons Citation potential tends to be highest for topical journals
@@ -418,7 +459,7 @@
         \begin{column}{.5\textwidth}
             \centering \textbf{Cons}
             \begin{itemize}[<+->]
-                \cons Bounded to the Scopus database
+                \cons Bounded to the \sco database
                 \cons Hard to interpret and calculate
                 \cons Still windowed approach
             \end{itemize}
