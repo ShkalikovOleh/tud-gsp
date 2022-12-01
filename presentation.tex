@@ -2,8 +2,8 @@
 \usetheme{Madrid}
 
 \usepackage{pifont}
-\usepackage{amsmath}
 \usepackage{xcolor}
+\usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{subcaption}
 
@@ -49,7 +49,7 @@
 
 % Metadata
 % ------------------------
-\title[Scientific metrics]{Scientific metrics}
+\title{Scientific metrics}
 
 \author[O. Shkalikov \and M. Zannini \and Q. Qaribiyan]
 {Oleh Shkalikov \and Matteo Zannini \and Qader Qaribiyan}
@@ -84,8 +84,8 @@
     \frametitle{IF (Impact Factor)}
     \begin{block}{What is Impact Factor?}
         \textbf{Impact Factor}\cite{garfield1972citation} --- a per-year
-        metric based on \wos database which reflect the mean number of citation
-        to the paper published within prior 2 year.
+        metric based on \wos database which reflect the mean number of citations
+        to the papers published within prior 2 year.
     \end{block}
 
     The Impact Factor is calculated by the following formula:
@@ -94,7 +94,7 @@
     \]
     where
     \begin{itemize}
-        \item $C(y)$ -- number of citation to the articles published in $[y-2, y-1]$~years
+        \item $C(y)$ -- number of citations to the articles published in $[y-2, y-1]$~years
         \item $D(y)$ -- number of published articles in year $y$
     \end{itemize}
 \end{frame}
@@ -143,7 +143,6 @@
               to all documents published within those years.
         \item $D(y)$ -- the number of all \textbf{peer-reviewed} documents published in year~$y$
     \end{itemize}
-
 \end{frame}
 
 \begin{frame}
@@ -290,7 +289,6 @@
     \frametitle{RDCP}
     \begin{columns}[T]
         \begin{column}{.5\textwidth}
-            % \vspace*{20pt}
             \[
                 RDCP^j(y) = \frac{DCP^j(y)}{\operatorname*{med}\limits_{i} \; {DCP^i(y)}}
             \]
@@ -468,6 +466,296 @@
 \end{frame}
 
 \section{Researcher's metrics}
+\begin{frame}
+    \centering
+    \Huge
+    Author-level metrics
+\end{frame}
+
+\subsection{h-index}
+\begin{frame}
+    \frametitle{h-index}
+
+    \begin{block}{What is the h-index?}
+        The \textbf{h-index}\cite{hirsch2005index} is a measure used to quantify the cumulative impact
+        and relevance of an individual’s scientific research output.
+    \end{block}
+
+    \begin{alertblock}{}
+        First introduced by Professor Jorge E. Hirsch in 2005.
+    \end{alertblock}
+    \textbf{h-index} formula:
+    \[
+        h = \max i \in N:f(i) \geq i
+    \]
+    \vspace*{-20pt}
+    \begin{columns}[T]
+        \begin{column}{.5\textwidth}
+            where
+            \begin{itemize}
+                \item $i$ is the published paper
+                \item $f(i)$ is the number of citations for $i$
+            \end{itemize}
+        \end{column}
+        \begin{column}{.5\textwidth}
+            \begin{figure}[h]
+                \includegraphics[height=0.3\textheight]{h-index_plot2.png}
+                \caption{Graphical representation of the h-index}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{h-index}
+
+    \begin{exampleblock}{Example}
+        \begin{center}
+            4 publications:   A,B,C,D \hspace{0.5cm}
+            citations per paper:  7,5,4,3\\
+            h-index=3
+        \end{center}
+    \end{exampleblock}
+
+    \begin{columns}[T]
+        \begin{column}{.5\textwidth}
+            \centering \textbf{Pros}
+            \begin{itemize}
+                \pros It avoids previous indexes' problems
+                \pros It measures both productivity and impact
+                \pros High h-index = high number of papers and citations
+            \end{itemize}
+        \end{column}
+        \begin{column}{.5\textwidth}
+            \centering \textbf{Cons}
+            \begin{itemize}
+                \cons Field of research is ignored
+                \cons Order of authors' contribution is ignored
+                \cons Insensitive to highly cited publications
+                \cons Exposed to manipulation
+                \cons Time-dependent
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{h-index variations}
+    \begin{block}{m quotient}
+        It allows comparisons between scientists with different career lengths.
+    \end{block}
+
+    \textbf{m quotient} formula:
+    \[
+        m = \frac{h}{n}
+    \]
+    where
+    \begin{itemize}
+        \item $n$ the number of years of academic activity
+    \end{itemize}
+
+    \begin{block}{normalized h-index}
+        It reduces the discipline bias.
+    \end{block}
+
+    \textbf{normalized h-index} formula:
+    \[
+        |h|=\frac{h}{d}
+    \]
+    where
+    \begin{itemize}
+        \item $d$ the average number of academics in the field
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{h-index variations}
+    \begin{block}{individual h-index or hl}
+        It reduces the effects of co-authorship.
+    \end{block}
+
+    \textbf{hl} formula:
+    \[
+        hl = \frac{h}{\sum\limits_{i=1}^n a_i}
+    \]
+    where
+    \begin{itemize}
+        \item $h$ -- the h-index
+        \item $n$ -- the number of papers and
+        \item $a_i$ -- average number of authors
+    \end{itemize}
+\end{frame}
+
+\subsection{g-index}
+\begin{frame}
+    \frametitle{g-index}
+    \begin{block}{What is the g-index?}
+        The \textbf{g-index}\cite{egghe2006theory} is a modified version of the h-index
+    \end{block}
+
+    \begin{alertblock}{}
+        First introduced by Leo Egghe in 2006.
+    \end{alertblock}
+
+    \begin{block}{How is it calculated?}
+        Decreasingly order the papers based on the number of citations for each.
+        The index is the largest number s.t. the top $g$ articles received together
+        at least $g^2$ citations.
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{g-index}
+    \textbf{g-index} formula:
+    \[
+        g^2 = \sum\limits_{i=1}^g c_i
+    \]
+    where
+    \begin{itemize}
+        \item $c_i$ -- number of citations for each $i$ paper
+    \end{itemize}
+
+    \begin{figure}[g]
+        \includegraphics[height=0.44\textheight]{g-index_wiki.jpg}
+        \caption{Graphical representation of the g-index}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{g-index}
+    \begin{exampleblock}{Example}
+        \begin{center}
+            Top publications: 5\\
+            Citations:        25\\
+            g-index=5
+        \end{center}
+    \end{exampleblock}
+
+    \begin{alertblock}{}
+        $g$ is always greater or equal to $h$.
+    \end{alertblock}
+
+    \begin{columns}[T]
+        \begin{column}{.5\textwidth}
+            \centering \textbf{Pros}
+            \begin{itemize}
+                \pros All h-index advantages
+                \pros It rewards papers with many citations
+            \end{itemize}
+        \end{column}
+        \begin{column}{.5\textwidth}
+            \centering \textbf{Cons}
+            \begin{itemize}
+                \cons Saturation value
+                \cons It lacks discriminatory power
+                \cons It only favours academics with many publications
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\subsection{c-index}
+\begin{frame}
+    \frametitle{c-indexes}
+    \begin{block}{What are c-indexes?}
+        \textbf{c-indexes}\cite{post2018c} are the result of the augmentation of
+        the h-index based on the citation order.
+    \end{block}
+    \begin{alertblock}{}
+        Introduced in 2018 in the magazine Cureus.
+    \end{alertblock}
+    \textbf{c-indexes} formulas:
+    \[
+        c_p = h + i_p  \qquad
+        c_s = h + i_s  \qquad
+        c_o = h + i_p + i_s
+    \]
+    The augmentations are given by the following formulas:
+    \begin{align*}
+        i_p &= n_f + 0.5 n_s \\
+        i_s &= n_l + 0.5 n_s
+    \end{align*}
+\end{frame}
+
+\begin{frame}
+    \frametitle{c-indexes}
+    \begin{columns}[T]
+        \begin{column}{.5\textwidth}
+            \centering \textbf{Pros}
+            \begin{itemize}
+                \pros All the advantages of the h-index
+                \pros More accurate
+                \pros Takes citation order into account
+            \end{itemize}
+        \end{column}
+        \begin{column}{.5\textwidth}
+            \centering \textbf{Cons}
+            \begin{itemize}
+                \cons Time-dependent
+                \cons Field of research is ignored
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\subsection{l-index}
+\begin{frame}
+    \frametitle{l-index}
+    \begin{block}{What is the l-index?}
+        The \textbf{l-index}\cite{lando2014new} is a bibliometric based measure
+        derived from the h-index which enhances highly cited papers.
+    \end{block}
+
+    \begin{alertblock}{}
+        Introduced in 2014.
+    \end{alertblock}
+
+    \textbf{l-index} formula:
+    \[
+        L(x) = \sum\limits_{i=1}^n \ln \left( 1 + \frac{x_i}{x_i^*} \right) x_i^*
+    \]
+    After normalization:
+    \[
+        l(x) = \sqrt{\frac{L(x)}{\ln 2}}
+    \]
+    where
+    \begin{itemize}
+        \item $x$ -- real citation distribution
+        \item $x^*$ -- ideal citation distribution
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{l-index}
+    \begin{columns}[T]
+        \begin{column}{.5\textwidth}
+            \centering \textbf{Pros}
+            \begin{itemize}
+                \pros All the advantages of the h-index
+                \pros It rewards papers with many citations
+                \pros Regular and robust
+            \end{itemize}
+        \end{column}
+        \begin{column}{.5\textwidth}
+            \centering \textbf{Cons}
+            \begin{itemize}
+                \cons Time-dependent
+                \cons Order of authors' contribution is ignored
+                \cons Field of research is ignored
+                \cons Complex calculation
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{CONCLUSION}
+    \begin{itemize}
+        \item [$\blacksquare$] Simple metrics like number of publications, number of citations or impact factor are often inappropriate to quantify the impact of a journal or an academic.
+        \item [$\blacksquare$] More complex metrics must be employed.
+        \item [$\blacksquare$] Deciding which metric to use depends on its specific properties and on the academic context.
+    \end{itemize}
+\end{frame}
 
 \begin{frame}[allowframebreaks]
     \frametitle{References}
