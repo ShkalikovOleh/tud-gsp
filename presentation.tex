@@ -47,12 +47,18 @@
 \newcommand{\wos}{\textit{Web of Science} }
 \newcommand{\sco}{\textit{Scopus} }
 
+% Author name with matriculation number
+% https://tex.stackexchange.com/questions/622753/how-to-format-a-beamer-title-with-two-names-and-one-institution
+\newcommand{\aut}[2]{\parbox{30mm}{\centering #1 \\ #2}}
+
 % Metadata
 % ------------------------
 \title{Scientific metrics}
 
 \author[O. Shkalikov \and M. Zannini \and Q. Qaribiyan]
-{Oleh Shkalikov \and Matteo Zannini \and Qader Qaribiyan}
+{\aut{Oleh Shkalikov}{5102818} \and
+ \aut{Matteo Zannini}{5122402} \and
+ \aut{Qader Qaribiyan}{5128979}}
 
 \institute[]{TU Dresden, Computer Science Faculty}
 
@@ -430,7 +436,7 @@
             where DCP -- database citation
             potential in a journal’s subject field:
             \[
-                DCP^j(y) = \frac{\sum\limits_{p \in CP(y)} DCP^j_p(y)}{\# CP^j(y)}
+                DCP^j(y) = \frac{\sum\limits_{p \in CP^j(y)} DCP^j_p(y)}{\# CP^j(y)}
             \]
         \end{column}
         \begin{column}{.5\textwidth}
